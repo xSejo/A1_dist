@@ -12,7 +12,7 @@ else if($start > $end)
     echo "Start number must be less than or equal to end number";
 else {
     // first 15 prime numbers excluding 2
-    $primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53];
+    $primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47];
     $list = [];
 
     for($i = $start; $i <= $end; $i++){
