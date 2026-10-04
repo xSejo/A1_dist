@@ -6,11 +6,11 @@
 
 if ($start === false || $start === null || $end === false || $end === null)
     echo "Invalid input. Enter a number";
-else if($start < 1 || $end < 1) 
-    echo "Enter a number greater than 0";
-else if($start > $end)
+else if ($start < 0 || $end < 0 || $start > 100 || $end > 100)
+    echo "Start and end numbers must not be negative or greater than 100.";
+else if($start > $end) 
     echo "Start number must be less than or equal to end number";
-else{
+else {
     // first 15 prime numbers excluding 2
     $primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53];
     $list = [];
