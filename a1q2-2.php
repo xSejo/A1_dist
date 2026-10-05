@@ -32,13 +32,17 @@ else if ($start < 0 || $end < 0 || $start > 100 || $end > 100)
 else if($start > $end) 
     echo "Start number must be less than or equal to end number";
 else {
-    
+    $factors = primeFactors($start, $end);
+    $list = [];
+
+    for($number = $start; $number <= $end; $number++){
+        if(!sharedFactors($number, $factors)){
+            array_push($list, $number);
+        }
+    }
+    if (count($list) === 0)
+        echo "All numbers have been crossed out!";
+    else
+        echo implode(', ', $list);
 }
-    
-
-if (count($list) === 0)
-    echo "All numbers have been crossed out!";
-else
-    echo implode(', ', $list);
-
 ?>
