@@ -1,18 +1,18 @@
 <?php
 
-function primeFactors($start, $end){
+function getPrimeFactors($start, $end){
     $primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47];
-    $primeFactors = [];
+    $activeFactors = [];
 
     foreach($primes as $prime){
         if($start % $prime === 0 || $end % $prime === 0){
-            array_push($primeFactors, $prime);
+            array_push($activeFactors, $prime);
         }
     }
-    return $primeFactors;
+    return $activeFactors;
 } 
 
-function sharedFactors($number, $primeFactors){
+function hasSharedFactors($number, $primeFactors){
     foreach($primeFactors as $factor){
         if($number % $factor === 0){
             return true;
@@ -36,7 +36,7 @@ else {
     $list = [];
 
     for($number = $start; $number <= $end; $number++){
-        if(!sharedFactors($number, $factors)){
+        if(!hasSharedFactors($number, $factors)){
             array_push($list, $number);
         }
     }
