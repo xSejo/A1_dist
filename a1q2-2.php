@@ -25,14 +25,14 @@ $start = filter_input(INPUT_POST, 'start', FILTER_VALIDATE_INT);
 $end = filter_input(INPUT_POST, 'end', FILTER_VALIDATE_INT);
 
 
-if ($start === false || $start === null || $end === false || $end === null)
+if ($start === false || $start === null || $end === false || $end === null){
     echo "Invalid input. Enter a number";
-else if ($start < 0 || $end < 0 || $start > 100 || $end > 100)
+} else if ($start < 0 || $end < 0 || $start > 100 || $end > 100){
     echo "Start and end numbers must not be negative or greater than 100.";
-else if($start > $end) 
+} else if($start > $end) {
     echo "Start number must be less than or equal to end number";
-else {
-    $factors = primeFactors($start, $end);
+} else {
+    $factors = getPrimeFactors($start, $end);
     $list = [];
 
     for($number = $start; $number <= $end; $number++){
@@ -42,11 +42,12 @@ else {
     }
     if (count($list) === 0)
         echo "All numbers have been crossed out!";
-    else
+    else{
         echo "<ul>";
             foreach($list as $number){
                 echo "<li>$number</li>";
             }
         echo "</ul>";
+    }
 }
 ?>
