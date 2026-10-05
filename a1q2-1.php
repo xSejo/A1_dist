@@ -1,5 +1,4 @@
 <?php
-# Your solution here!
     function getFactors($number){
         $factors = [];
 
