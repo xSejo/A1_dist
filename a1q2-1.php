@@ -3,10 +3,10 @@
     function getFactors($number){
         $factors = [];
 
-        for($divisor = 1; $divisor <= $number; $divisor++){
-        if($number % $divisor === 0){
-            array_push($factors, $divisor);
-        }
+        for($divisor = 1; $divisor <= $number; $divisor++){     
+            if($number % $divisor === 0){
+                array_push($factors, $divisor);
+            }
         }
         return $factors;
     }
