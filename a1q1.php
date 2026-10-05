@@ -16,14 +16,14 @@ else{
         $str = str_replace('BR', '', $str);
     }
 
-    $redCrossed = str_contains($str, 'R');
-    $blackCrossed = str_contains($str, 'B');
+    $hasRedCrossed = str_contains($str, 'R');
+    $hasBlackCrossed = str_contains($str, 'B');
 
-    if($redCrossed && $blackCrossed){
+    if($hasRedCrossed && $hasBlackCrossed){
         echo "M.A.D";
-    } else if($redCrossed && !$blackCrossed){
+    } else if($hasRedCrossed && !$hasBlackCrossed){
         echo "Red Wins";
-    } else if(!$redCrossed && $blackCrossed){
+    } else if(!$hasRedCrossed && $hasBlackCrossed){
         echo "Black Wins";
     } else {
         echo "Neither";
