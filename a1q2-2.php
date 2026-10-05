@@ -43,6 +43,10 @@ else {
     if (count($list) === 0)
         echo "All numbers have been crossed out!";
     else
-        echo implode(', ', $list);
+        echo "<ul>";
+            foreach($list as $number){
+                echo "<li>$number</li>";
+            }
+        echo "</ul>";
 }
 ?>
