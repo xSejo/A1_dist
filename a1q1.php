@@ -9,7 +9,7 @@
 
 // Since we haven't covered this in php yet, im citing these.
 // str_replace method - https://www.php.net/manual/en/function.str-replace.php
-// str_match method - https://www.php.net/manual/en/function.preg-match.php and https://stackoverflow.com/questions/12411037/how-do-i-make-this-preg-match-case-insensitive
+// preg_match method - https://www.php.net/manual/en/function.preg-match.php and https://stackoverflow.com/questions/12411037/how-do-i-make-this-preg-match-case-insensitive
 
 
 $input = filter_input(INPUT_GET, 'ants');
