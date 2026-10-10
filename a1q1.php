@@ -22,12 +22,12 @@ if($input === null || $input === false || $validateInput !== ''){
     echo "Invalid input. Enter characters of R, B, and X only.";
 }
 else{
-    while (strpos($str, 'BR') !== false) { // CHANGED CODE HERE! preg_match is easier to read but this is more consistent since I already used str methods.
+    while (preg_match('/BR/', $str)) { 
         $str = str_replace('BR', '', $str);
     }
 
-    $hasRedCrossed = str_contains($str, 'R');
-    $hasBlackCrossed = str_contains($str, 'B');
+    $hasRedCrossed = preg_match('/R/', $str);
+    $hasBlackCrossed = preg_match('/B/', $str);
 
     if($hasRedCrossed && $hasBlackCrossed){
         echo "M.A.D.";
