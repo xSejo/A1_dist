@@ -9,7 +9,8 @@
 
 // Since we haven't covered this in php yet, im citing these.
 // str_replace method - https://www.php.net/manual/en/function.str-replace.php
-// str_contains method - https://www.php.net/manual/en/function.str-contains.php
+// str_match method - https://www.php.net/manual/en/function.preg-match.php and https://stackoverflow.com/questions/12411037/how-do-i-make-this-preg-match-case-insensitive
+
 
 $input = filter_input(INPUT_GET, 'ants');
 $str = str_replace('X', '', $input);
@@ -22,12 +23,12 @@ if($input === null || $input === false || $validateInput !== ''){
     echo "Invalid input. Enter characters of R, B, and X only.";
 }
 else{
-    while (preg_match('/BR/', $str)) { 
+    while (preg_match('/BR/i', $str)) { 
         $str = str_replace('BR', '', $str);
     }
 
-    $hasRedCrossed = preg_match('/R/', $str);
-    $hasBlackCrossed = preg_match('/B/', $str);
+    $hasRedCrossed = preg_match('/R/i', $str);
+    $hasBlackCrossed = preg_match('/B/i', $str);
 
     if($hasRedCrossed && $hasBlackCrossed){
         echo "M.A.D.";
