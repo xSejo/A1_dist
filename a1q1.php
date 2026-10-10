@@ -23,12 +23,12 @@ if($input === null || $input === false || $validateInput !== ''){
     echo "Invalid input. Enter characters of R, B, and X only.";
 }
 else{
-    while (preg_match('/BR/i', $str)) { 
+    while (preg_match('/BR/', $str)) { 
         $str = str_replace('BR', '', $str);
     }
 
-    $hasRedCrossed = preg_match('/R/i', $str);
-    $hasBlackCrossed = preg_match('/B/i', $str);
+    $hasRedCrossed = preg_match('/R/', $str);
+    $hasBlackCrossed = preg_match('/B/', $str);
 
     if($hasRedCrossed && $hasBlackCrossed){
         echo "M.A.D.";
