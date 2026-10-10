@@ -11,7 +11,7 @@
 // str_replace method - https://www.php.net/manual/en/function.str-replace.php
 // str_contains method - https://www.php.net/manual/en/function.str-contains.php
 
-$input = filter_input(INPUT_GET, 'ants', FILTER_SANITIZE_SPECIAL_CHARS);
+$input = filter_input(INPUT_GET, 'ants');
 $str = str_replace('X', '', $input);
 
 $validateInput = str_replace('R', '', $input);
@@ -22,7 +22,7 @@ if($input === null || $input === false || $validateInput !== ''){
     echo "Invalid input. Enter characters of R, B, and X only.";
 }
 else{
-    while (strpos($str, 'BR', 0) === 0) {
+    while (strpos($str, 'BR') !== false) { // CHANGED CODE HERE! preg_match is easier to read but this is more consistent since I already used str methods.
         $str = str_replace('BR', '', $str);
     }
 
