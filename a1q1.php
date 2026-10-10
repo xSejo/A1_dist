@@ -22,7 +22,7 @@ if($input === null || $input === false || $validateInput !== ''){
     echo "Invalid input. Enter characters of R, B, and X only.";
 }
 else{
-    while (str_contains($str, 'BR')) {
+    while (substr($str, 0, 2) === 'BR') {
         $str = str_replace('BR', '', $str);
     }
 
